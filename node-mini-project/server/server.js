@@ -67,7 +67,7 @@ app.use(
 // AdminJS Setup
 // ----------------------
 const componentLoader = new ComponentLoader();
-const ImageList = componentLoader.add('ImageList', './src/components/ImageList.js');
+const ImageList = componentLoader.add('ImageList', './src/components/ImageList.jsx');
 
 const admin = new AdminJS({
   rootPath: '/admin',
