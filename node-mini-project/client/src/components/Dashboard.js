@@ -40,6 +40,8 @@ export default function Dashboard() {
 
     const interval = setInterval(() => {
       dispatch(productsInitiate());
+      console.log("vvvvvvvvvvvvvvvvvvvvvvvv",window.location.origin);
+    
     }, 10000);
 
     return () => clearInterval(interval);
@@ -114,7 +116,7 @@ export default function Dashboard() {
                     component="img"
                     image={
                       p.productImage?.startsWith("http")
-                        ? p.productImage
+                        ? `${window.location.origin}${p.productImage}`
                         : `http://localhost:3000${p.productImage}`
                     }
                     alt={p.name}
