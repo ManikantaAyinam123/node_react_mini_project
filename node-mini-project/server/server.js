@@ -141,7 +141,7 @@ const admin = new AdminJS({
             handler: async (req, res, ctx) => {
               if (req.method === 'post') {
                 const payload = req.payload || {};
-                await axios.post("https://vivacious-presence-redis.up.railway.app/api/sales/create", {
+                await axios.post("https://node-react-mini-project.onrender.com/api/sales/create", {
                   category: payload.category,
                   discount: payload.discount,
                   startTime: payload.startTime,
@@ -200,6 +200,10 @@ app.use(express.static(buildPath));
 app.get(/.*/, (req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'));
 });
+
+import("./workers/saleWorker.js")
+  .then(() => console.log("🔥 Worker Loaded Inside Backend"))
+  .catch((err) => console.error("❌ Worker Load Failed", err));
 
 // ----------------------
 // Start Server
