@@ -141,7 +141,7 @@ const admin = new AdminJS({
             handler: async (req, res, ctx) => {
               if (req.method === 'post') {
                 const payload = req.payload || {};
-                await axios.post("http://localhost:3000/api/sales/create", {
+                await axios.post("https://vivacious-presence-redis.up.railway.app/api/sales/create", {
                   category: payload.category,
                   discount: payload.discount,
                   startTime: payload.startTime,
